@@ -1,0 +1,82 @@
+<apex:page controller="DFDemo_AdminUIController" title="{!$Label.DFDemo_Band_Settings}"> 
+    <apex:stylesheet value="{!$Resource.DFDemo_AdminUICSS}"/>
+    <style> <!-- embedded to allow URLFOR -->
+        .info-message {
+            background-image: url('{!URLFOR($Resource.DFDemo_resources, '/uilib/icons/info32.png')}');
+        }
+        .success-message {
+            background-image:url('{!URLFOR($Resource.DFDemo_resources, '/uilib/icons/confirm32.png')}');
+        }
+        .warning-message {
+            background-image: url('{!URLFOR($Resource.DFDemo_resources, '/uilib/icons/warning32.png')}');
+        }
+        .error-message {
+            background-image: url('{!URLFOR($Resource.DFDemo_resources, '/uilib/icons/error32.png')}');
+        }
+
+    </style>
+    <apex:includeScript value="{!URLFOR($Resource.jQuery_datatable, '/media/js/jquery.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.DFDemo_Resources, '/uilib/js/jQuery/jquery-ui.min.js')}" />
+    <apex:includeScript value="{!URLFOR($Resource.DFDemo_Resources, '/uilib/js/general.js')}"/>
+    <apex:includeScript value="{!$Resource.DFDemo_AdminUIJS}"/>
+    <script type="text/javascript">
+
+        var bandData = {!BandsJSON};  //Data for ACC_AdminUIJS
+
+        // Page init
+        $(document).ready(function() {
+
+            //set up add handlers for pre, post rows
+            $('form :input.addRow').click(addrow);
+
+            //set up save, cancel buttons
+            $('#save').click(saveBands);
+            $('#cancel').click(function() {
+                loadInitialData();
+                addFeedback('Changes discarded.', 'info-message');
+            });
+
+            loadInitialData();
+
+            //add ids to add/del buttons on first data row for guided tour
+            $('.dataRow:first .addRow').attr('id', 'addRowData');
+            $('.dataRow:first .delRow').attr('id', 'delRowData');
+        });
+
+    </script>
+    <apex:form >
+        <div class='pbBody'>
+        <apex:sectionHeader title="{!$Label.DFDemo_Band_Settings}" />
+        <div id='pageButtons'><input type="button" id='save' value='{!$Label.DFDemo_Save}' class='btn'/><input type="button" id='cancel' value='{!$Label.DFDemo_Cancel}' class='btn'/></div>
+        <table id='bands' class='list'>
+            <thead>
+                <tr class='headerRow'>
+                    <th class='labelCol'>&nbsp;</th>
+                    <th class='labelCol'>{!$Label.DFDemo_Band_Minimum}</th>
+                    <th class='labelCol'>{!$Label.DFDemo_Band_Maximum}</th>
+                    <th class='labelCol'>Min TLP %</th>
+                    <th class='labelCol'>Min Utilization %</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr id='rowAddPre'>
+                    <td><input type="button" class='addRow' id='addRowPre' value="+" title="{!$Label.DFDemo_Add_New_Band}"/></td>
+                    <td/>
+                    <td/>
+                    <td/>
+                    <td/>
+                </tr>
+                <!-- Actual Bands go here -->
+                <tr id="rowAddPost">
+                    <td><input type="button" value="+" class='addRow' id='addRowPost' title="{!$Label.DFDemo_Add_New_Band}"/></td>
+                    <td/>
+                    <td/>
+                    <td/>
+                    <td/>
+                </tr>
+            </tbody>
+        </table>
+        <div id='feedback'/>
+        </div>
+    </apex:form>
+</apex:page>
