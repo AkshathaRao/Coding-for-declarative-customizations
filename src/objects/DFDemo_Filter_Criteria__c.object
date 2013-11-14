@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>Hierarchy</customSettingsType>
+    <customSettingsVisibility>Protected</customSettingsVisibility>
+    <description>Used to create filter criteria for queries or evaluations in the code for project.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Current_Band_Max__c</fullName>
+        <defaultValue>100</defaultValue>
+        <description>The maximum band used for evaluation by the work flow to trigger the on boarding evaluation process.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The maximum band used for evaluation by the work flow to trigger the on boarding evaluation process.</inlineHelpText>
+        <label>Current Band Max</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>Current_Band_Min__c</fullName>
+        <defaultValue>1</defaultValue>
+        <description>The minimum band used for evaluation by the work flow to trigger the on boarding evaluation process.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>The minimum band used for evaluation by the work flow to trigger the on boarding evaluation process.</inlineHelpText>
+        <label>Current Band Min</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Number</type>
+        <unique>false</unique>
+    </fields>
+    <label>DFDemo Filter Criteria</label>
+</CustomObject>

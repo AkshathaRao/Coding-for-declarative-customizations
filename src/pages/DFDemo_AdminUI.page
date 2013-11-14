@@ -54,8 +54,8 @@
                     <th class='labelCol'>&nbsp;</th>
                     <th class='labelCol'>{!$Label.DFDemo_Band_Minimum}</th>
                     <th class='labelCol'>{!$Label.DFDemo_Band_Maximum}</th>
-                    <th class='labelCol'>Min TLP %</th>
-                    <th class='labelCol'>Min Utilization %</th>
+                    <th class='labelCol'>{!$Label.DFDemo_Minimum_Licenses}</th>
+                    <th class='labelCol'>{!$Label.DFDemo_Minimum_Logins}</th>
                 </tr>
             </thead>
             <tbody>

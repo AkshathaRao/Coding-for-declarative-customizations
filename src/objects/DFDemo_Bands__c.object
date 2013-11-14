@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <customSettingsVisibility>Protected</customSettingsVisibility>
+    <description>Used to generate the range of values for bands that relate to usage values for each range.</description>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Evaluate_for_Downgrade__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Evaluate for Downgrade</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Evaluate_for_Upgrade__c</fullName>
+        <defaultValue>false</defaultValue>
+        <externalId>false</externalId>
+        <label>Evaluate for Upgrade</label>
+        <trackTrending>false</trackTrending>
+        <type>Checkbox</type>
+    </fields>
+    <fields>
+        <fullName>Licenses__c</fullName>
+        <description>Used to specify the target licenses for a given range of Band values.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used to specify the target licenses for a given range of Band values.</inlineHelpText>
+        <label>Licenses</label>
+        <precision>18</precision>
+        <required>true</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <fields>
+        <fullName>Logins__c</fullName>
+        <description>Used to specify the logins for a given range of Band values.</description>
+        <externalId>false</externalId>
+        <inlineHelpText>Used to specify the logins for a given range of Band values.</inlineHelpText>
+        <label>Logins</label>
+        <precision>18</precision>
+        <required>false</required>
+        <scale>0</scale>
+        <trackTrending>false</trackTrending>
+        <type>Percent</type>
+    </fields>
+    <label>DFDemo Bands</label>
+</CustomObject>

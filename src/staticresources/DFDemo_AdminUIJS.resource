@@ -1,13 +1,13 @@
 var bypassValidation = false;  //prevent focus() deadlock on a blank row
 
 // add a new row to the table, and hook up all events.  enabling individual fields handled separately
-function insertNewRow(insertAfter, min, max, tlp, util) {
+function insertNewRow(insertAfter, min, max, licenses, logins) {
     var newRow = $("<tr class='dataRow'></tr>")
         .append($('<td><input type="button" class="delRow" value="-" title="Remove this Band"/><input type="button" class="addRow" value="+" title="Add a new Band by splitting this row"/></td>'))
         .append($("<td/>").append($("<input class='band bandmin' type='text'/>").val(min)))
         .append($("<td/>").append($("<input class='band bandmax' type='text'/>").val(max)))
-        .append($("<td/>").append($("<input class='tlp pct' type='text'/><span>%</span>").val(tlp)))
-        .append($("<td/>").append($("<input class='util pct' type='text'/><span>%</span>").val(util)));
+        .append($("<td/>").append($("<input class='licenses pct' type='text'/><span>%</span>").val(licenses)))
+        .append($("<td/>").append($("<input class='logins pct' type='text'/><span>%</span>").val(logins)));
     insertAfter.after(newRow);
     $(newRow).find('input').blur(validator);
     $(newRow).find('input.addRow').click(addrow);
@@ -135,8 +135,8 @@ function addrow() {
     var nextRow = insertAfter.next('.dataRow')
     var newRowMax = nextRow.length? parseInt(nextRow.find('.bandmin').val()) - 1 : parseInt(insertAfter.find('.bandmax').val());
     newRowMax = newRowMin? '' : newRowMax;
-    var newRowTLP = $(thisRow).is('.dataRow') ? $(thisRow).find('.tlp').val(): '';
-    var newRowUtil = $(thisRow).is('.dataRow') ? $(thisRow).find('.util').val(): '';
+    var newRowTLP = $(thisRow).is('.dataRow') ? $(thisRow).find('.licenses').val(): '';
+    var newRowUtil = $(thisRow).is('.dataRow') ? $(thisRow).find('.logins').val(): '';
 
     newRow = insertNewRow(insertAfter, newRowMin, newRowMax, newRowTLP, newRowUtil);
     updateEnabled();
@@ -155,8 +155,8 @@ function encodeRow(row) {
     return {
         'bandmin' : parseInt(r.find('.bandmin').val()),
         'bandmax' : parseInt(r.find('.bandmax').val()),
-        'tlp'     : parseFloat(r.find('.tlp').val()),
-        'util'    : parseFloat(r.find('.util').val()),
+        'licenses'     : parseFloat(r.find('.licenses').val()),
+        'logins'    : parseFloat(r.find('.logins').val()),
     };
 }
 
@@ -217,11 +217,11 @@ function loadInitialData() {
     var insertAfter = $('#rowAddPre');
     if (bandData.length == 0) {
         //provide a blank row
-        bandData = [{"bandmin":"", "bandmax":"", "tlp":"", "util":""}];
+        bandData = [{"bandmin":"", "bandmax":"", "licenses":"", "logins":""}];
     }
 
     bandData.forEach(function(b) {
-        insertAfter = insertNewRow(insertAfter, b.bandmin, b.bandmax, b.tlp, b.util);
+        insertAfter = insertNewRow(insertAfter, b.bandmin, b.bandmax, b.licenses, b.logins);
     });
 
     //ensure correct UI state.

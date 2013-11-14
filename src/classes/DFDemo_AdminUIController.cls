@@ -2,10 +2,10 @@ public with sharing class DFDemo_AdminUIController {
 	@TestVisible private static final string ERROR_NEGATIVE_MIN = 'ERROR: Band Minimum must be greater than 0.';
     @TestVisible private static final string ERROR_MAX_ABOVE_MIN = 'ERROR: Band Maximum must be greater than its minimum.';
     @TestVisible private static final string ERROR_GAP = 'ERROR: Band Minimum must be 1 greater than prior band minimum.';
-    @TestVisible private static final string ERROR_BAD_TLP = 'ERROR: Minimum TLP % must be between 0 and 100.';
-    @TestVisible private static final string ERROR_BAD_UTIL = 'ERROR: Minimum Utilization % must be between 0 and 100.';
+    @TestVisible private static final string ERROR_BAD_LICENSES = 'ERROR: Minimum licenses must be between 0 and 100.';
+    @TestVisible private static final string ERROR_BAD_LOGINS = 'ERROR: Minimum logins must be between 0 and 100.';
     @TestVisible private static final string ERROR_BAD_JSON = 'ERROR: Unexpected Error - server could not process the Band Data.';
-    @TestVisible private static final string ERROR_NO_BANDS = 'ERROR: At least  Band must be defined.';
+    @TestVisible private static final string ERROR_NO_BANDS = 'ERROR: At least Band must be defined.';
     @TestVisible private static final string ERROR_DML_FAIL = 'ERROR: Unexpected Error - DML Error while saving Bands';
     @TestVisible private static final string WARNING_TAG = 'WARNING: ';
     @TestVisible private static final string WARNING_NEW_BAND_MIN = 'The new minimum for the first band is greater than the old value.  ';
@@ -16,14 +16,14 @@ public with sharing class DFDemo_AdminUIController {
     public class Wrapper implements Comparable{
         public integer bandmin;
         public integer bandmax;
-        public Decimal tlp;
-        public Decimal util;
+        public Decimal licenses;
+        public Decimal logins;
 
         public Wrapper (integer min, integer max, Decimal t, Decimal u) {
             bandmin = min;
             bandmax = max;
-            tlp = t;
-            util = u;
+            licenses = t;
+            logins = u;
         }
 
         public integer compareTo(Object other) {
@@ -39,7 +39,7 @@ public with sharing class DFDemo_AdminUIController {
 	                List<String> bounds = b.name.split('-');
 	                integer bandmin = integer.valueOf(bounds[0].replaceAll(',', ''));
 	                integer bandmax = integer.valueOf(bounds[1].replaceAll(',', ''));
-	                bands.add(new Wrapper(bandmin, bandmax, b.TLP__c, b.Lic_Util__c));
+	                bands.add(new Wrapper(bandmin, bandmax, b.Licenses__c, b.Logins__c));
 	        }
             bands.sort();
         }
@@ -80,10 +80,10 @@ public with sharing class DFDemo_AdminUIController {
                 return ERROR_MAX_ABOVE_MIN;
             if (lastmax > -1 && (band.bandmin - lastmax) != 1)
                 return ERROR_GAP;
-            if (band.tlp < 0 || band.tlp > 100)
-                return ERROR_BAD_TLP;
-            if (band.util < 0 || band.util > 100)
-                return ERROR_BAD_UTIL;
+            if (band.licenses < 0 || band.licenses > 100)
+                return ERROR_BAD_LICENSES;
+            if (band.logins < 0 || band.logins > 100)
+                return ERROR_BAD_LOGINS;
 
             lastmax = band.bandmax;
         }
@@ -116,8 +116,8 @@ public with sharing class DFDemo_AdminUIController {
                 else {
                         newBand = new DFDemo_Bands__c(name=bandname );
                 }
-                newBand.TLP__c = band.tlp;
-                newBand.Lic_Util__c = band.util;
+                newBand.Licenses__c = band.licenses;
+                newBand.Logins__c = band.logins;
                 upsertBands.add(newBand);
         }
 

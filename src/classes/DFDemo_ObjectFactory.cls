@@ -26,6 +26,18 @@ public with sharing class DFDemo_ObjectFactory {
         return u;
     }
     
+    //given a list of SObjects, returns the set of unique object ids
+    public static Set<Id> getObjectIds(List<SObject> objects) {
+    	Set<id> ids = new Set<id>();
+    	if (objects !=null) {
+	    	for (SObject o : objects) {
+	    		ids.add(o.id);
+	    	}
+    	}
+    	return ids;
+
+    }
+    
     @isTest
     private static void getTestUser() {
         User u = getTestUser(RANDOM_NAME + SFDC_DOMAIN, STANDARD_USER);
@@ -51,7 +63,6 @@ public with sharing class DFDemo_ObjectFactory {
             Account a = new Account(name = String.isBlank(accountName) ? RANDOM_NAME : accountName + String.valueOf(i), ShippingCountry = 'US');
             accounts.add(a);
         }
-        
         insert accounts;
         return accounts;
     }

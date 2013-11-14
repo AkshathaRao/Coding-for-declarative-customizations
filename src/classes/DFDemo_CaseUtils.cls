@@ -68,7 +68,7 @@ public with sharing class DFDemo_CaseUtils {
             DFDemo_GackUtils.sendGack(gackEmails, errorReport, System.Label.DFDemo_CaseUtils_DML_Gack_Subject);
             return null;
         }
-
+		
         return newCases;
     }
     
@@ -163,6 +163,7 @@ public with sharing class DFDemo_CaseUtils {
         return errors;
     }
 
+	@TestVisible
     private String getAllErrors(List<Database.Error> errors) {
         List<String> msgs = new List<String>();
         for (Database.Error e : errors) {

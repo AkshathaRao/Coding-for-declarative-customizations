@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomLabels xmlns="http://soap.sforce.com/2006/04/metadata">
+    <labels>
+        <fullName>DFDemoDefault_Exception_Email_Address_List</fullName>
+        <categories>Gack</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Comma-separated list of email addresses to receive GACK emails</shortDescription>
+        <value>arao@salesforce.com,alexis.williams@salesforce.com</value>
+    </labels>
+    <labels>
+        <fullName>DFDemo_Add_New_Band</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>DFDemo Add New Band</shortDescription>
+        <value>Add a new Band</value>
+    </labels>
+    <labels>
+        <fullName>DFDemo_Band_Maximum</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Band Maximum</shortDescription>
+        <value>Band Maximum</value>
+    </labels>
+    <labels>
+        <fullName>DFDemo_Band_Minimum</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Band Minimum</shortDescription>
+        <value>Band Minimum</value>
+    </labels>
+    <labels>
+        <fullName>DFDemo_Band_Settings</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>DFDemo Band Settings</shortDescription>
+        <value>Band Settings</value>
+    </labels>
+    <labels>
+        <fullName>DFDemo_Cancel</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>DFDemo Cancel</shortDescription>
+        <value>Cancel</value>
+    </labels>
+    <labels>
+        <fullName>DFDemo_CaseUtils_Bad_Fieldset</fullName>
+        <categories>error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DFDemo_CaseUtils_Bad_Fieldset</shortDescription>
+        <value>DFDemo_CaseUtils.createCasesFromNamedTemplate - Could not load fieldset ({0}) for template ({1}); No cases were created.</value>
+    </labels>
+    <labels>
+        <fullName>DFDemo_CaseUtils_Bad_RecordType</fullName>
+        <categories>error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DFDemo_CaseUtils_Bad_RecordType</shortDescription>
+        <value>DFDemo_CaseUtils.createCasesFromTemplate - No such Case record type ({0}); No cases were created.</value>
+    </labels>
+    <labels>
+        <fullName>DFDemo_CaseUtils_Bad_TemplateId</fullName>
+        <categories>error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DFDemo_CaseUtils_Bad_TemplateId</shortDescription>
+        <value>DFDemo_CaseUtils.createCasesFromNamedTemplate - No such template id ({0}) for template ({1}); No cases were created.</value>
+    </labels>
+    <labels>
+        <fullName>DFDemo_CaseUtils_Bad_TemplateName</fullName>
+        <categories>error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DFDemo_CaseUtils_Bad_TemplateName</shortDescription>
+        <value>DFDemo_CaseUtils.createCasesFromNamedTemplate - No such template ({0}); No cases were created.</value>
+    </labels>
+    <labels>
+        <fullName>DFDemo_CaseUtils_DML_Gack_Subject</fullName>
+        <categories>error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DFDemo_CaseUtils_DML_Gack_Subject</shortDescription>
+        <value>DML Exception(s) creating cases</value>
+    </labels>
+    <labels>
+        <fullName>DFDemo_CaseUtils_Failed_Cases_Prefix</fullName>
+        <categories>error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DFDemo_CaseUtils_Failed_Cases_Prefix</shortDescription>
+        <value>Could not create cases for the following accounts:</value>
+    </labels>
+    <labels>
+        <fullName>DFDemo_CaseUtils_Gack_Subject</fullName>
+        <categories>error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DFDemo_CaseUtils_Gack_Subject</shortDescription>
+        <value>Error creating cases</value>
+    </labels>
+    <labels>
+        <fullName>DFDemo_CaseUtils_NamedTemplate_Gack_Subject</fullName>
+        <categories>error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DFDemo_CaseUtils_NamedTemplate_Gack_Subject</shortDescription>
+        <value>Error creating cases with template {0}</value>
+    </labels>
+    <labels>
+        <fullName>DFDemo_CaseUtils_No_Case_Created_Prefix</fullName>
+        <categories>error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DFDemo_CaseUtils_No_Case_Created_Prefix</shortDescription>
+        <value>No case was created for the following accounts:</value>
+    </labels>
+    <labels>
+        <fullName>DFDemo_CaseUtils_Query_Exception_Error</fullName>
+        <categories>error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DFDemo_CaseUtils_Query_Exception_Error</shortDescription>
+        <value>DFDemo_CaseUtils.createCasesFromNamedTemplate - Unexpected error while querying for template ({0}); No cases were created.</value>
+    </labels>
+    <labels>
+        <fullName>DFDemo_CaseUtils_Query_Too_Long_Error</fullName>
+        <categories>error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DFDemo_CaseUtils_Query_Too_Long_Error</shortDescription>
+        <value>DFDemo_CaseUtils.createCasesFromNamedTemplate - internal error (Query string too large); No cases were created.</value>
+    </labels>
+    <labels>
+        <fullName>DFDemo_CaseUtils_User_Create_Perms_Error</fullName>
+        <categories>error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DFDemo_CaseUtils_User_Create_Perms_Error</shortDescription>
+        <value>DFDemo_CaseUtils.createCasesFromTemplate - User {0} cannot create Case; No cases were created.</value>
+    </labels>
+    <labels>
+        <fullName>DFDemo_CaseUtils_User_RecordType_Perms_Error</fullName>
+        <categories>error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DFDemo_CaseUtils_User_RecordType_Perms_Error</shortDescription>
+        <value>DFDemo_CaseUtils.createCasesFromTemplate - User cannot create Cases of record type {0}; No cases were created.</value>
+    </labels>
+    <labels>
+        <fullName>DFDemo_Case_Creation_Failure_Email</fullName>
+        <categories>Onboarding</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>DFDemo_Case_Creation_Failure_Email</shortDescription>
+        <value>arao@salesforce.com,alexis.williams@salesforce.com</value>
+    </labels>
+    <labels>
+        <fullName>DFDemo_Field_Insufficient_Access_Privileges</fullName>
+        <categories>error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DFDemo_Field_Insufficient_Access_Privileges</shortDescription>
+        <value>Insufficient Access Privileges while trying to {0} field(s) {1} on {2}</value>
+    </labels>
+    <labels>
+        <fullName>DFDemo_Invalid_Field</fullName>
+        <categories>error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DFDemo_Invalid_Field</shortDescription>
+        <value>Invalid field: {0}</value>
+    </labels>
+    <labels>
+        <fullName>DFDemo_Minimum_Licenses</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Minimum Licenses</shortDescription>
+        <value>Minimum Licenses</value>
+    </labels>
+    <labels>
+        <fullName>DFDemo_Minimum_Logins</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Minimum Logins</shortDescription>
+        <value>Minimum Logins</value>
+    </labels>
+    <labels>
+        <fullName>DFDemo_No_Such_Recordtype</fullName>
+        <categories>error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DFDemo_No_Such_Recordtype</shortDescription>
+        <value>No such record type {0} for SObject {1}</value>
+    </labels>
+    <labels>
+        <fullName>DFDemo_Object_Insufficient_Access_Privileges</fullName>
+        <categories>error</categories>
+        <language>en_US</language>
+        <protected>false</protected>
+        <shortDescription>DFDemo_Object_Insufficient_Access_Privileges</shortDescription>
+        <value>Insufficient Access Privileges while trying to {0} on {1}</value>
+    </labels>
+    <labels>
+        <fullName>DFDemo_Onboarding_Status_Evaluate</fullName>
+        <categories>Onboarding</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>DFDemo_Onboarding_Status_Evaluating</shortDescription>
+        <value>Evaluating</value>
+    </labels>
+    <labels>
+        <fullName>DFDemo_Onboarding_Status_Failed</fullName>
+        <categories>Onboarding</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>DFDemo_Onboarding_Status_Failed</shortDescription>
+        <value>Failed</value>
+    </labels>
+    <labels>
+        <fullName>DFDemo_Onboarding_Status_Graduated</fullName>
+        <categories>Onboarding</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>DFDemo_Onboarding_Status_Graduated</shortDescription>
+        <value>Graduated</value>
+    </labels>
+    <labels>
+        <fullName>DFDemo_Onboarding_Status_In_Progress</fullName>
+        <categories>Onboarding</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>DFDemo_Onboarding_Status_In_Progress</shortDescription>
+        <value>In-Progress</value>
+    </labels>
+    <labels>
+        <fullName>DFDemo_Onboarding_Status_No_Results</fullName>
+        <categories>Onboarding</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>DFDemo_Onboarding_Status_No_Results</shortDescription>
+        <value>No Results</value>
+    </labels>
+    <labels>
+        <fullName>DFDemo_Onboarding_Status_Processing</fullName>
+        <categories>Onboarding</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>DFDemo_Onboarding_Status_Processing</shortDescription>
+        <value>Processing</value>
+    </labels>
+    <labels>
+        <fullName>DFDemo_Save</fullName>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>DFDemo Save</shortDescription>
+        <value>Save</value>
+    </labels>
+    <labels>
+        <fullName>Error_Positive_Number</fullName>
+        <categories>Error</categories>
+        <language>en_US</language>
+        <protected>true</protected>
+        <shortDescription>Error_Positive_Number</shortDescription>
+        <value>Field must be a positive number</value>
+    </labels>
+</CustomLabels>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <customSettingsVisibility>Protected</customSettingsVisibility>
+    <description>Mapping of template names to template Case records.</description>
+    <enableEnhancedLookup>false</enableEnhancedLookup>
+    <enableFeeds>false</enableFeeds>
+    <fields>
+        <fullName>Fieldset_Name__c</fullName>
+        <defaultValue>&quot;DFDemo_CaseUtils_AutoCreate_Fields&quot;</defaultValue>
+        <description>Name of Case fieldset containing the fields to be cloned from this template.</description>
+        <externalId>false</externalId>
+        <label>Fieldset_Name</label>
+        <length>40</length>
+        <required>true</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>RecordTypeId__c</fullName>
+        <defaultValue>null</defaultValue>
+        <description>RecordTypeId to assign to cases created from this template.  If null, the case will retain the recordtype of the template.</description>
+        <externalId>false</externalId>
+        <label>RecordTypeId</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <fields>
+        <fullName>TemplateID__c</fullName>
+        <description>Id of Case template record</description>
+        <externalId>false</externalId>
+        <label>TemplateID</label>
+        <length>18</length>
+        <required>false</required>
+        <trackTrending>false</trackTrending>
+        <type>Text</type>
+        <unique>false</unique>
+    </fields>
+    <label>DFDemo_CaseUtils_Templates</label>
+</CustomObject>

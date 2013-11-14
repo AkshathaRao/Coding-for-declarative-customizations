@@ -1,20 +1,20 @@
 public with sharing class DFDemo_Bands {
     private Map<String, DFDemo_Bands__c> configObj = null;
     private static DFDemo_Bands config = null;
-    private static Decimal band, tlp, licUtil, luTlp;
+    private static Decimal band, licenses, logins;
     private static Boolean evalUpgrade, evalDowngrade;
     private String MAX_VALUE = 'max';
     private String MIN_VALUE = 'min';
     private static DFDemo_Bands__c[] defaultValues;
     @TestVisible private static final Decimal FIRST_BAND_MIN = 1001;
     @TestVisible private static final Decimal FIRST_BAND_MAX = 100000;
-    @TestVisible private static final Decimal FIRST_BAND_LIC_UTIL = 77;
-    @TestVisible private static final Decimal FIRST_BAND_TLP = 66;
+    @TestVisible private static final Decimal FIRST_BAND_LOGINS = 77;
+    @TestVisible private static final Decimal FIRST_BAND_LICENSES = 66;
     @TestVisible private static final String FIRST_BAND_NAME = String.valueOf(FIRST_BAND_MIN) + '-' + String.valueOf(FIRST_BAND_MAX);
     @TestVisible private static final Decimal SECOND_BAND_MIN = 100001;
     @TestVisible private static final Decimal SECOND_BAND_MAX = 200000;
-    @TestVisible private static final Decimal SECOND_BAND_LIC_UTIL = 58;
-    @TestVisible private static final Decimal SECOND_BAND_TLP = 62;
+    @TestVisible private static final Decimal SECOND_BAND_LOGINS = 58;
+    @TestVisible private static final Decimal SECOND_BAND_LICENSES = 62;
     @TestVisible private static final String SECOND_BAND_NAME = String.valueOf(SECOND_BAND_MIN) + '-' + String.valueOf(SECOND_BAND_MAX);
 
     private void init() {
@@ -22,13 +22,13 @@ public with sharing class DFDemo_Bands {
         DFDemo_Bands__c firstBand = new DFDemo_Bands__c();
         DFDemo_Bands__c secondBand = new DFDemo_Bands__c();
 
-        firstBand.Lic_Util__c = FIRST_BAND_LIC_UTIL;
-        firstBand.TLP__c = FIRST_BAND_TLP;
+        firstBand.Logins__c = FIRST_BAND_LOGINS;
+        firstBand.Licenses__c = FIRST_BAND_LICENSES;
         firstBand.Name = FIRST_BAND_NAME;
         firstBand.SetupOwnerId = UserInfo.getOrganizationId();
 
-        secondBand.Lic_Util__c = SECOND_BAND_LIC_UTIL;
-        secondBand.TLP__c = SECOND_BAND_TLP;
+        secondBand.Logins__c = SECOND_BAND_LOGINS;
+        secondBand.Licenses__c = SECOND_BAND_LICENSES;
         secondBand.Name = SECOND_BAND_NAME;
         secondBand.SetupOwnerId = UserInfo.getOrganizationId();
 
@@ -58,24 +58,24 @@ public with sharing class DFDemo_Bands {
         config = null;
     }
 
-    public Decimal getTLP(Decimal val) {
+    public Decimal getLicenses(Decimal val) {
         if(configObj == null || configObj.isEmpty() || val == null) return null;
 
-        if(val == band && tlp != null && band != null) return tlp;
+        if(val == band && licenses != null && band != null) return licenses;
 
-        setTLPAndLicUtil(val);
+        setLICENSESAndLicUtil(val);
 
-        return tlp;
+        return licenses;
     }
 
-    public Decimal getLicUtil(Decimal val) {
+    public Decimal getLogins(Decimal val) {
         if(configObj == null || configObj.isEmpty() || val == null) return null;
 
-        if(val == band && licUtil != null && band != null) return licUtil;
+        if(val == band && logins != null && band != null) return logins;
 
-        setTLPAndLicUtil(val);
+        setLICENSESAndLicUtil(val);
 
-        return licUtil;
+        return logins;
     }
     
     public Decimal getBandValue(String value) {
@@ -99,7 +99,7 @@ public with sharing class DFDemo_Bands {
         return values[0];
     }
 
-    private void setTLPAndLicUtil(Decimal val) {
+    private void setLICENSESAndLicUtil(Decimal val) {
         for(String key :configObj.keySet()) {
             Decimal min, max;
             Integer i;
@@ -116,13 +116,13 @@ public with sharing class DFDemo_Bands {
             }
 
             if(DFdemo_Math.inRangeEqualTo(val, min, max)) {
-                tlp = configObj.get(key).TLP__c;
-                licUtil = configObj.get(key).Lic_Util__c;       
+                licenses = configObj.get(key).Licenses__c;
+                logins = configObj.get(key).Logins__c;       
                 band = val;
                 break;
             } else {
-                tlp = null;
-                licUtil = null;
+                licenses = null;
+                logins = null;
                 band = null;
             }
         }

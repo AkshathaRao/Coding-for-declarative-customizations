@@ -15,6 +15,7 @@ public with sharing class DFDemo_CustomerOnboarding{
     
  private boolean getAccountsReadyToProcess() {
         for(Account acct :accountsNew.values()) {
+       	
             if(String.isBlank(acct.On_boarding_Status__c)) continue;
 
             if(acct.On_boarding_Status__c.equalsIgnoreCase(Label.DFDemo_Onboarding_Status_Processing)) {
